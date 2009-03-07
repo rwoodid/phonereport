@@ -1,0 +1,32 @@
+<h1>Listing phonecalls</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Dial number</th>
+    <th>Destination</th>
+    <th>Duration</th>
+    <th>Cost</th>
+    <th>Call type</th>
+  </tr>
+
+<% for phonecall in @phonecalls %>
+  <tr>
+    <td><%=h phonecall.date %></td>
+    <td><%=h phonecall.time %></td>
+    <td><%=h phonecall.dial_number %></td>
+    <td><%=h phonecall.destination %></td>
+    <td><%=h phonecall.duration %></td>
+    <td><%=h phonecall.cost %></td>
+    <td><%=h phonecall.call_type %></td>
+    <td><%= link_to 'Show', phonecall %></td>
+    <td><%= link_to 'Edit', edit_phonecall_path(phonecall) %></td>
+    <td><%= link_to 'Destroy', phonecall, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New phonecall', new_phonecall_path %>

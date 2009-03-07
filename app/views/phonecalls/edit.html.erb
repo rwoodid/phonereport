@@ -1,0 +1,40 @@
+<h1>Editing phonecall</h1>
+
+<% form_for(@phonecall) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :date %><br />
+    <%= f.text_field :date %>
+  </p>
+  <p>
+    <%= f.label :time %><br />
+    <%= f.text_field :time %>
+  </p>
+  <p>
+    <%= f.label :dial_number %><br />
+    <%= f.text_field :dial_number %>
+  </p>
+  <p>
+    <%= f.label :destination %><br />
+    <%= f.text_field :destination %>
+  </p>
+  <p>
+    <%= f.label :duration %><br />
+    <%= f.text_field :duration %>
+  </p>
+  <p>
+    <%= f.label :cost %><br />
+    <%= f.text_field :cost %>
+  </p>
+  <p>
+    <%= f.label :call_type %><br />
+    <%= f.text_field :call_type %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @phonecall %> |
+<%= link_to 'Back', phonecalls_path %>

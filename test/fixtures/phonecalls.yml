@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  date: MyString
+  time: MyString
+  dial_number: 1
+  destination: MyString
+  duration: 1
+  cost: 1
+  call_type: MyString
+
+two:
+  date: MyString
+  time: MyString
+  dial_number: 1
+  destination: MyString
+  duration: 1
+  cost: 1
+  call_type: MyString

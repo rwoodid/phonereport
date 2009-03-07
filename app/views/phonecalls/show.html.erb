@@ -1,0 +1,38 @@
+<p>
+  <b>Date:</b>
+  <%=h @phonecall.date %>
+</p>
+
+<p>
+  <b>Time:</b>
+  <%=h @phonecall.time %>
+</p>
+
+<p>
+  <b>Dial number:</b>
+  <%=h @phonecall.dial_number %>
+</p>
+
+<p>
+  <b>Destination:</b>
+  <%=h @phonecall.destination %>
+</p>
+
+<p>
+  <b>Duration:</b>
+  <%=h @phonecall.duration %>
+</p>
+
+<p>
+  <b>Cost:</b>
+  <%=h @phonecall.cost %>
+</p>
+
+<p>
+  <b>Call type:</b>
+  <%=h @phonecall.call_type %>
+</p>
+
+
+<%= link_to 'Edit', edit_phonecall_path(@phonecall) %> |
+<%= link_to 'Back', phonecalls_path %>
