@@ -4,14 +4,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>Phonecalls: <%= controller.action_name %></title>
+  <title>Phone Report</title>
   <%= stylesheet_link_tag 'scaffold' %>
 </head>
 <body>
 
 <p style="color: green"><%= flash[:notice] %></p>
-
+<div id="wrapper">
+<div id="header">
+<span>Tracey's Phone Report Creator</span>
+</div>
 <%= yield  %>
-
+</div>
 </body>
 </html>

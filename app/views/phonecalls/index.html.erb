@@ -2,6 +2,8 @@
 
 <table>
   <tr>
+    <th>Period</th>
+    <th>CLi Number</th>
     <th>Date</th>
     <th>Time</th>
     <th>Dial number</th>
@@ -13,7 +15,9 @@
 
 <% for phonecall in @phonecalls %>
   <tr>
-    <td><%=h phonecall.date %></td>
+    <td><%=h phonecall.period.month %></td>
+    <td><%=h phonecall.cli.phone_number %></td>
+    <td><%=h phonecall.date_of_call %></td>
     <td><%=h phonecall.time %></td>
     <td><%=h phonecall.dial_number %></td>
     <td><%=h phonecall.destination %></td>
@@ -28,5 +32,6 @@
 </table>
 
 <br />
+
 
 <%= link_to 'New phonecall', new_phonecall_path %>

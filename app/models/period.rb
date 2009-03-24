@@ -1,4 +1,4 @@
 class Period < ActiveRecord::Base
-  belongs_to :phonecall
-  belongs_to :reort
+  has_many :phonecalls
+  belongs_to :report
 end

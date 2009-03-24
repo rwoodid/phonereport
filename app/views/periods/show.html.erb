@@ -1,0 +1,62 @@
+<div id="header">
+<p>
+<%= link_to 'Upload Cost Center CSV File', new_cost_centre_upload_path %>
+</p>
+<p>
+<%= link_to 'Upload Phone-bill CSV File', new_bill_path %>
+</p>
+<p>
+<%= link_to 'View Cost Centers', cost_centres_path %>
+</p>
+</div>
+<div id="header">
+<h1><%= @period.month %></h1>
+</div>
+<table id="report">
+<% for cost_centre in @cost_centres %>
+
+<tr>
+	
+<td align="left"><%=h cost_centre.name %></td>
+<td align="right">£<%= cost_centre.total_cost_for_period(@period.id)%><td>
+	
+</tr>
+
+
+
+<% end %>
+</table>
+<div id="report_total">
+<h1>Total £</h1>
+</div>
+<p>
+	
+<% phonenumber=0 %>
+<% cost=0 %>
+	
+ <% for phonecalls_for_this_period_without_cost_centre in @phonecalls_for_this_period_without_cost_centres %>
+  
+      <% if phonenumber != phonecalls_for_this_period_without_cost_centre.cli.phone_number %>
+	  	<%= phonenumber%>
+       <%= cost%>
+       <% phonenumber=phonecalls_for_this_period_without_cost_centre.cli.phone_number%>
+       <%= cost=0 %>
+      <%= cost += phonecalls_for_this_period_without_cost_centre.cost %>
+         <% else %>
+         <%= cost += phonecalls_for_this_period_without_cost_centre.cost %>
+        <%end%>
+<%end%>
+</p>
+
+<p>
+<% for phonecalls_for_this_period_without_cost_centres in @phonecalls_for_this_period_without_cost_centres %>
+<p>
+	<span>0<%= phonecalls_for_this_period_without_cost_centres.cli.phone_number%></span>
+	<%= phonecalls_for_this_period_without_cost_centres.cost%>
+</p>
+<%end%>
+</p>
+
+
+
+

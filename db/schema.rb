@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090307230930) do
+ActiveRecord::Schema.define(:version => 20090318001539) do
 
   create_table "bills", :force => true do |t|
     t.string   "name"
@@ -23,13 +23,23 @@ ActiveRecord::Schema.define(:version => 20090307230930) do
   end
 
   create_table "clis", :force => true do |t|
-    t.integer  "phone_number",   :limit => 11
     t.integer  "cost_centre_id", :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "phone_number",   :limit => 11
   end
 
-  create_table "cost_centers", :force => true do |t|
+  create_table "cost_centre_uploads", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "cost_centre_file_file_name"
+    t.string   "cost_centre_file_content_type"
+    t.integer  "cost_centre_file_file_size",    :limit => 11
+    t.datetime "cost_centre_file_updated_at"
+  end
+
+  create_table "cost_centres", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -42,17 +52,17 @@ ActiveRecord::Schema.define(:version => 20090307230930) do
   end
 
   create_table "phonecalls", :force => true do |t|
-    t.string   "date"
     t.string   "time"
-    t.integer  "dial_number", :limit => 11
+    t.integer  "dial_number",  :limit => 11
     t.string   "destination"
-    t.integer  "duration",    :limit => 11
-    t.integer  "cost",        :limit => 11
     t.string   "call_type"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "period_id",   :limit => 11
-    t.integer  "cli_id",      :limit => 11
+    t.integer  "period_id",    :limit => 11
+    t.integer  "cli_id",       :limit => 11
+    t.float    "cost"
+    t.float    "duration"
+    t.string   "date_of_call"
   end
 
   create_table "reports", :force => true do |t|

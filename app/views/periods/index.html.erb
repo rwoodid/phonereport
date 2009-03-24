@@ -1,0 +1,15 @@
+<div id="header">
+<p>
+<%= link_to 'Upload Cost Center CSV File', new_cost_centre_upload_path %>
+</p>
+<p>
+<%= link_to 'Upload Phone-bill CSV File', new_bill_path %>
+</p>
+<p>
+<%= link_to 'View Cost Centers', cost_centres_path %>
+</p>
+</div>
+<h1>Reports</h1>
+<% for period in @periods %>
+<%= link_to period.month, period %>
+<%end%>

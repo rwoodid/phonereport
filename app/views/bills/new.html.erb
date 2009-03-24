@@ -1,0 +1,22 @@
+<h1>Upload Phone-bill CSV</h1>
+<% form_for @bill, :html => {:multipart => true} do |f| %>
+	
+	
+	<p><%= f.file_field :csv_file%>
+		
+		
+		<p>
+		    <%= f.submit "Create" %>
+		</p>
+<% end %>
+<div id="header">
+<p>
+<%= link_to 'Upload Cost Center CSV File', new_cost_centre_upload_path %>
+</p>
+<p>
+<%= link_to 'View Cost Centers', cost_centres_path %>
+</p>
+<p>
+<%= link_to 'View Reports', periods_path %>
+</p>
+</div>

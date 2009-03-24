@@ -3,6 +3,7 @@ class PhonecallsController < ApplicationController
   # GET /phonecalls.xml
   def index
     @phonecalls = Phonecall.find(:all)
+    
 
     respond_to do |format|
       format.html # index.html.erb
