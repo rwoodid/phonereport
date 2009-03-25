@@ -2,7 +2,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :phonecalls
   map.resources :cost_centre_uploads
   map.resources :bills
-  map.resources :cost_centres
+  map.resources :cost_centres, :has_many => :clis
   map.resources :periods
 
   # The priority is based upon order of creation: first created -> highest priority.

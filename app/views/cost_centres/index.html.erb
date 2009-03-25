@@ -8,6 +8,10 @@
 <p>
 <%= link_to 'View Reports', periods_path %>
 </p>
+<p>
+<%= link_to 'Create a new Cost Centre', new_cost_centre_path %>
+</p>
+
 </div>
 
 
@@ -16,16 +20,16 @@
 
 <% for cost_centre in @cost_centres %>
 
-<div>
+<p>
 <%=h cost_centre.name %>
-<%= link_to 'Edit', edit_cost_centre_path(cost_centre) %>
-<%= link_to 'Destroy', cost_centre, :confirm => 'Are you sure?', :method => :delete %>
+</p>
 
-</div>
 
    
 
 <% end %>
 
+
 <br />
+
 

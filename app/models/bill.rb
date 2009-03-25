@@ -24,6 +24,17 @@ class Bill < ActiveRecord::Base
   def load_phonecalls_from_csv
     
     FasterCSV.foreach("#{filepath}", :headers => true) do |row|
+        period = row["Period"]
+        @previous_bill_periods = Period.find(:all)
+            for previous_bill_period in @previous_bill_periods
+              if previous_bill_period.month = period
+                flash[:notice] = 'This bill has been previousley loaded.'
+                redirect_to new_bill_path
+              end
+            end
+        end
+    
+    FasterCSV.foreach("#{filepath}", :headers => true) do |row|
       period = row["Period"]
       account = row["AccountNumber"]
       dialfrom = row[" DialledFrom"]
@@ -47,7 +58,6 @@ class Bill < ActiveRecord::Base
       @phonecall.cost = cost
       @phonecall.call_type = call_type
       @phonecall.save
-    
       
     end
       

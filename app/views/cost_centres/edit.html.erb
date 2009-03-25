@@ -1,0 +1,15 @@
+<h1>Editing Cost Center</h1>
+
+<% form_for (@cost_centre) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+
+  
+<% end %>
+
+
+<%= link_to 'Back', cost_centres_path %>
